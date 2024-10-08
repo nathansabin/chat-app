@@ -1,7 +1,7 @@
 const instialState = {
     name: '',
     connected: false,
-    log: {}
+    log: []
 }
 
 const stateReducer = (state = instialState, action) => {
@@ -13,10 +13,11 @@ const stateReducer = (state = instialState, action) => {
             state.connected = !state.connected;
             return state;
         case 'PUSH_LOG':
+            let now = new Date();
             state.log.push({
                 name: action.payload.name,
                 message: action.payload.message,
-                time: (Date.getTime())/1000 /60 / 60
+                time: (now.getTime())/1000 /60 / 60
             });
             return state;
         default:

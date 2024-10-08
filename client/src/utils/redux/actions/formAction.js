@@ -9,6 +9,6 @@ export const setConnection = (state) => ({
 });
 
 export const pushLog = (state) => ({
-    type: 'SET_NAME',
+    type: 'PUSH_LOG',
     payload: state
 });
