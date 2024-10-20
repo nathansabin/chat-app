@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class chatController {
     @MessageMapping("/users")
-    @SendTo("/app/receive")
+    @SendTo("/chat/receive")
     public ResponseEntity<message> chat(@RequestBody message mes){
         try {
             return new ResponseEntity<message>(mes, HttpStatus.OK);
